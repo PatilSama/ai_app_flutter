@@ -4,6 +4,7 @@ import 'package:ai_app_flutter/screens/home_screen.dart';
 import 'package:ai_app_flutter/screens/on_boarding_screen.dart';
 import 'package:ai_app_flutter/widgets/custom_loading.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,12 +19,16 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (_) => Pref.showOnBoarding
-              ? const OnBoardingScreen()
-              : const HomeScreen(),
-        ),
+      // Navigator.of(context).pushReplacement(
+      //   MaterialPageRoute(
+      //     builder: (_) => Pref.showOnBoarding
+      //         ? const OnBoardingScreen()
+      //         : const HomeScreen(),
+      //   ),
+      // );
+      Get.off(
+        () =>
+            Pref.showOnBoarding ? const OnBoardingScreen() : const HomeScreen(),
       );
     });
   }

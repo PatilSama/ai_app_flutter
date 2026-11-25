@@ -2,6 +2,7 @@ import 'package:ai_app_flutter/helper/globle.dart';
 import 'package:ai_app_flutter/model/OnBoard.dart';
 import 'package:ai_app_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -75,9 +76,10 @@ class OnBoardingScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   if (isLast) {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => HomeScreen()),
-                    );
+                    // Navigator.of(context).pushReplacement(
+                    //   MaterialPageRoute(builder: (_) => HomeScreen()),
+                    // );
+                    Get.off(() => HomeScreen());
                   } else {
                     c.nextPage(
                       duration: Duration(milliseconds: 6),
